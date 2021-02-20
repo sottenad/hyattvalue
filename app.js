@@ -1,22 +1,32 @@
 require('dotenv').config()
 
-const express = require('express')
+const express = require('express');
+const fs = require('fs');
+const https = require('https');
+const http = require('http');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+const path = require('path');
 const exphbs  = require('express-handlebars');
+const Handlebars = require('handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const methodOverride = require('method-override');
-
+const morgan = require('morgan');
+const winston = require('winston');
+const logger = require('./config/winston');
 
 
 
 const indexRouter = require('./routes/index');
+const apiRouter = require('./routes/api');
 
 const app = express()
 
 const isDev = process.env.NODE_ENV === 'development';
+if(isDev) app.use(morgan('dev'));
 
 // view engine setup - also include the handlebars helper file
 app.set('views', path.join(__dirname, 'views'));
+
 //when configuring the app view engine
 app.engine('.hbs', exphbs({
   handlebars: allowInsecurePrototypeAccess(Handlebars),
@@ -27,15 +37,17 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 app.use(bodyParser.urlencoded({  extended: true }))
+app.use(methodOverride('_method'))
 app.use(express.json());
-//app.use(express.urlencoded({ extended: false }));
-app.use(lessMiddleware(path.join(__dirname, 'public')));
 
-if(isDev) app.use(morgan('dev'));
+//app.use(express.urlencoded({ extended: false }));
+
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api', apiRouter);
 
 
 // START SERVER

@@ -1,0 +1,42 @@
+# OS X
+.DS_Store*
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+#PrivateNotes
+ORDERNUMBERS.md
+utilities/dbBackup.js
+
+#Database utilities
+db
+config/db
+
+# npm
+node_modules
+
+*.log
+*.gz
+
+
+# Coveralls
+coverage
+
+# Benchmarking
+benchmarks/graphs
+
+#keys
+cert.key
+cert.pem
+req.cnf
+.env
+server.cert
+server.key

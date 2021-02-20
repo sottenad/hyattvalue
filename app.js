@@ -10,6 +10,9 @@ const exphbs  = require('express-handlebars');
 const Handlebars = require('handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const methodOverride = require('method-override');
+
+const mongoose = require('mongoose');
+
 const morgan = require('morgan');
 const winston = require('winston');
 const logger = require('./config/winston');
@@ -50,11 +53,31 @@ app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
 
+//Set up default mongoose connection
+let mongoDBUrl = process.env.MONGO_URI;
+
+
+mongoose.Promise = global.Promise;
+const mongoConfig = {
+  useFindAndModify: false,
+  autoIndex: false,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+};
+
+logger.info('Starting connection to MongoDB Server')
+mongoose.connect(mongoDBUrl, mongoConfig, function (err, db) {
+  if (err) {
+    logger.error('Unable to connect to the mongoDB server. Error:', err);
+  } else {
+    logger.info('Connection established to', mongoDBUrl);
+  }
+});
+
 // START SERVER
 let server = {};
 const port = process.env.PORT || 8081;
 if(isDev){
-  
   https.createServer({
     key: fs.readFileSync('server.key'),
     cert: fs.readFileSync('server.cert')

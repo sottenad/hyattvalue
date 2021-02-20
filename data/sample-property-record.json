@@ -1,0 +1,129 @@
+{
+  "wasph": {
+    "spiritCode": "wasph",
+    "amenities": {
+      "FREE_INTERNET": {
+        "key": "FREE_INTERNET",
+        "label": "Free Internet Access",
+        "featured": false,
+        "status": "ACTIVE"
+      },
+      "RESTAURANT_ONSITE": {
+        "announcementValidFrom": "2020-09-21",
+        "key": "RESTAURANT_ONSITE",
+        "label": "Restaurant On-Site",
+        "featured": true,
+        "status": "ACTIVE",
+        "specialAnnouncement": "Limited capacity, Reservations strongly encouraged"
+      },
+      "ROOM_SERVICE": {
+        "announcementValidFrom": "2020-09-21",
+        "key": "ROOM_SERVICE",
+        "label": "Room Service",
+        "featured": true,
+        "status": "ACTIVE",
+        "specialAnnouncement": "To-go packaging, Contact-free delivery"
+      },
+      "FITNESS_CENTER": {
+        "announcementValidFrom": "2020-09-21",
+        "key": "FITNESS_CENTER",
+        "label": "Fitness Center",
+        "featured": true,
+        "status": "ACTIVE",
+        "specialAnnouncement": "Access via lobby - see Front Desk"
+      },
+      "PET_FRIENDLY": {
+        "key": "PET_FRIENDLY",
+        "label": "Pet Friendly",
+        "featured": true,
+        "status": "ACTIVE"
+      },
+      "DIGITAL_KEY": {
+        "key": "DIGITAL_KEY",
+        "label": "Digital Key",
+        "featured": false,
+        "status": "ACTIVE"
+      },
+      "DIGITAL_CHECK_IN": {
+        "key": "DIGITAL_CHECK_IN",
+        "label": "Digital Check-In",
+        "featured": false,
+        "status": "ACTIVE"
+      },
+      "BUSINESS_SERVICES": {
+        "key": "BUSINESS_SERVICES",
+        "label": "Business Services",
+        "featured": true,
+        "status": "ACTIVE"
+      },
+      "LAUNDRY": {
+        "key": "LAUNDRY",
+        "label": "Laundry",
+        "featured": false,
+        "status": "ACTIVE"
+      },
+      "CONCIERGE": {
+        "key": "CONCIERGE",
+        "label": "Concierge",
+        "featured": true,
+        "status": "ACTIVE"
+      },
+      "MEETING_FACILITIES": {
+        "key": "MEETING_FACILITIES",
+        "label": "Meeting Facilities",
+        "featured": true,
+        "status": "ACTIVE"
+      },
+      "POOL": {
+        "key": "POOL",
+        "label": "Pool",
+        "featured": true,
+        "validThrough": "2020-09-21",
+        "status": "INACTIVE"
+      },
+      "SPA": {
+        "key": "SPA",
+        "label": "Spa",
+        "featured": false,
+        "validThrough": "2020-09-21",
+        "status": "INACTIVE"
+      }
+    },
+    "capabilities": null,
+    "awardCategory": { "key": "5", "label": "5" },
+    "booking": { "external": false, "isExternal": false },
+    "brand": { "key": "PARK", "label": "Park Hyatt", "bellhopRoute": "park" },
+    "description": "<p>Luxurious West End hotel near Georgetown &amp; the White House<br>\n</p>\n",
+    "image": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2017/04/10/1432/Park-Hyatt-Washington-P284-Park-Lobby-2017.jpg/Park-Hyatt-Washington-P284-Park-Lobby-2017.4x3.jpg",
+    "location": {
+      "addressLine1": "1201 24th Street, NW",
+      "addressLine2": null,
+      "city": "Washington",
+      "zipcode": "20037",
+      "stateProvince": { "key": "DC", "label": "D.C." },
+      "subRegion": null,
+      "country": { "key": "US", "label": "United States" },
+      "region": { "key": "NORTH_AMERICA", "label": "North America" },
+      "geolocation": { "latitude": 38.90560121157, "longitude": -77.0513543486 }
+    },
+    "logo": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2017/05/25/1428/Park-Hyatt-L003c-R-rev-RGB.png/Park-Hyatt-L003c-R-rev-RGB.468x131-PSR.png",
+    "name": "Park Hyatt Washington D.C.",
+    "nameHyphenated": "Park Hyatt Washington D.C.",
+    "mobileName": "Park Hyatt Washington D.C.",
+    "rate": {
+      "currencyCode": "USD",
+      "usdRate": 349,
+      "bookingPeriodDays": 37,
+      "localRate": 349,
+      "marketingPointsValue": 20000
+    },
+    "rating": {
+      "numReviews": 2407,
+      "rating": 4.5,
+      "verifiedNumReviews": 762,
+      "verifiedRating": 4.5
+    },
+    "shortName": "Park Hyatt Washington D.C.",
+    "url": "https://www.hyatt.com/en-US/hotel/washington-dc/park-hyatt-washington-dc/wasph"
+  }
+}

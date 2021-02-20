@@ -1,1 +1,32 @@
-Hello - guts.
+<section class="section">
+    <div class="container">
+      <h1 class="title">
+        Value Tracker
+      </h1>
+    </div>
+</section>
+<section class="section">
+  <div class="container">
+    <p>{{totalCount}} properties found. Showing {{processedCount}}</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+          <th>Nightly Price</th>
+          <th>Value in Points</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each properties}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{value}}</td>
+          <td>${{usdRate}}</td>
+          <td>{{marketingPointsValue}} points</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>

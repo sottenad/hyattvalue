@@ -3,9 +3,15 @@ const Schema = mongoose.Schema;
 
 //This represents a single property
 const propertySchema = new Schema({
-  code: String,
-  awardCategory: Number,
-  brand: String,
+  spiritCode: String,
+  awardCategory: { 
+    key: String, 
+    label: String
+  },
+  brand: { 
+    key: String, 
+    label: String
+  },
   image: String,
   location: {
     addressLine1: String,
@@ -16,7 +22,10 @@ const propertySchema = new Schema({
       key: String, 
       label: String 
     },
-    subRegion: String,
+    subRegion: { 
+      key: String, 
+      label: String
+    },
     country: { 
       key: String, 
       label: String
@@ -29,6 +38,13 @@ const propertySchema = new Schema({
       latitude: Number, 
       longitude: Number 
     }
+  },
+  rate: {
+    currencyCode: String,
+    usdRate: Number,
+    bookingPeriodDays: Number,
+    localRate: Number,
+    marketingPointsValue: Number
   },
   rating: {
     numReviews: Number,

@@ -2,25 +2,33 @@
 
 require('dotenv').config()
 const mongoose = require('mongoose');
+const axios = require('axios');
 const Property = require('../models/property');
 const logger = require('../config/winston');
 
+
 let getProperties = async () =>{
+  const startTime = Date.now();
+
   try{
     let response = await axios.get('https://www.hyatt.com/explore-hotels/service/hotels')
+    logger.info('got response data');
     let data = response.data
     let count = 0;
-    for (var key of Object.keys(data)) {
+    for (let key of Object.keys(data)) {
       let row = data[key];
       count++;
+      logger.info('Creating Property: '+count)
 
-      if(count < 1)
-        console.log(row)
-    
-        
-      }
-    
-  
+      await Property.create(row); 
+    }
+
+    let endTime = Date.now()
+    let timeDelta = (endTime - startTime)/1000
+    logger.info('ElapsedTime: '+timeDelta+' Seconds');
+    //Exit process.
+    process.exit(0)
+      
   } catch (error) {
     throw(error);
   }
@@ -39,3 +47,6 @@ let connectToDB = () => {
     console.error('MongoDB Connection Error. Make sure MongoDB is running.');
   });
 }
+
+//Now start job.
+connectToDB();
